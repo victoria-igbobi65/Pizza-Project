@@ -1,8 +1,8 @@
 var express = require('express');
 
-var userRoute = require('../src/routes/userRoute')
+var auth = require('../src/routes/auth')
 var rootRouter = express.Router();
 
-rootRouter.use('/users', userRoute)
+rootRouter.use('/users', auth)
 
 module.exports = rootRouter;
