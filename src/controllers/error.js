@@ -61,11 +61,11 @@ module.exports = (err, req, res, next) => {
 
     // dETERMINES IF WE ARE IN PRODUCTION OR DEVELOPMENT
     if (process.env.NODE_ENV === 'development') {
+        console.log(err)
         sendErrorDev(err, res)
     } else if (process.env.NODE_ENV === 'production') {
         // DEEP COPY THE err ARGUMENT
         let error = JSON.parse(JSON.stringify(err))
-        console.log(error)
 
         //DETERMINES THE TYPE OF ERROR AND ATTACHES THE APPROPRIATE ERROR FUNCTION
         if (error.name === 'CastError') error = handleCastErrorDB(error)
