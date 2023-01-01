@@ -37,10 +37,10 @@ const welcomeMail = async({name, email}) => {
             <small>&copy; 2022 tflowersandfabrics.com</small>
           </div></div>`;
   return sendEmail({
-    from: process.env.MAIL_USER,
-    to: email,
-    subject: "Pizzain Pizza",
-    html: message,
-  });
+      from: `Pizzain Pizza <${process.env.MAIL_USER}> `,
+      to: email,
+      subject: 'Welcome to Pizzain Pizza',
+      html: message,
+  })
 };
 module.exports = welcomeMail;
