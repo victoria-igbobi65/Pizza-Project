@@ -9,4 +9,8 @@ userRouter
     .route('/signup')
     .post(userValidator, authController.signUp)
 
+userRouter
+    .route('/login')
+    .post(authController.login)
+
 module.exports = userRouter
